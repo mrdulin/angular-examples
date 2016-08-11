@@ -34,7 +34,7 @@ _移动端坑爹问题总结_
    在该定位的元素中滚动时，不会阻塞js代码，`setInterval`继续执行。但是当滚动到边界拉出`ios`特有的弹性边界时，又开始阻塞js代码。
 
 5. 通过编程的方式（不是用户与UI交互的方式），无法使用`input.focus()`让移动设备的虚拟键盘弹出。
-    通过设置`cordova.xml`文件的,可以实现
+    通过设置`cordova.xml`文件的`<preference name="KeyboardDisplayRequiresUserAction" value="false" />`,可以实现
     测试机型：Iphone 5s ios 8.1.2 , Ipod Touch5 ios 9.3.3 通过
     安卓 4.3, 6.0.1 不通过
 
