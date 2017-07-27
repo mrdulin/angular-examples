@@ -4,7 +4,6 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 declare const __dirname: string;
 
 const PORT: number = 2222;
-const publicPath: string = '/';
 
 const config: webpack.Configuration = {
   entry: {
@@ -15,7 +14,6 @@ const config: webpack.Configuration = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     pathinfo: true,
-    publicPath
   },
 
   module: {
@@ -29,13 +27,12 @@ const config: webpack.Configuration = {
   },
 
   devServer: {
-    contentBase: path.resolve(__dirname, '../src'),
+    contentBase: path.resolve(__dirname, 'src'),
     port: PORT,
     host: '0.0.0.0',
     historyApiFallback: false,
     noInfo: false,
-    stats: 'minimal',
-    publicPath
+    stats: 'minimal'
   },
 
   resolve: {
