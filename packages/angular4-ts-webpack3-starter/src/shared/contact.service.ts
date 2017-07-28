@@ -14,7 +14,13 @@ export class ContactService {
     return this.http.request(url, new RequestOptions(opts))
       .map((res) => {
         let _res = res.json();
-
+        if (opts.id) {
+          for (let i = 0; i < _res.length; i++) {
+            if (_res[i].id == opts.id) {
+              _res = _res[i];
+            }
+          }
+        }
         if (opts.collection) {
           let temp: any = [];
           for (let i = 0; i < _res.length; i++) {
@@ -37,8 +43,8 @@ export class ContactService {
     return this.get(CONTACT_URL);
   }
 
-  getContactById() {
-
+  getContactById(id: number) {
+    return this.get(CONTACT_URL, { id });
   }
 
   getCollections() {

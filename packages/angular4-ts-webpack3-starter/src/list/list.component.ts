@@ -11,7 +11,8 @@ export class ListComponent implements OnInit {
   contacts: any[] = [];
 
   constructor(
-    private _contactService: ContactService
+    private _contactService: ContactService,
+    private _router: Router
   ) { }
 
   ngOnInit() {
@@ -19,10 +20,19 @@ export class ListComponent implements OnInit {
   }
 
   getContacts() {
-    this._contactService.getContactsData().subscribe((data: any) => {
-      this.contacts = data;
-    });
+    const ss_contacts = sessionStorage.getItem('contacts');
+    if (!ss_contacts) {
+      this._contactService.getContactsData().subscribe((data: any) => {
+        this.contacts = data;
+        sessionStorage.setItem('contacts', JSON.stringify(data));
+      });
+    } else {
+      this.contacts = JSON.parse(ss_contacts);
+    }
   }
 
 
+  routerNavigate(id: number) {
+    this._router.navigate(['/list', id]);
+  }
 }

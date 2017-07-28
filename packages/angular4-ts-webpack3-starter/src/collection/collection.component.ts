@@ -3,8 +3,8 @@ import { ContactService } from '../shared/contact.service';
 
 @Component({
   selector: 'call-record',
-  templateUrl: './collection.component.html',
-  styleUrls: ['./collection.component.css']
+  templateUrl: './collection/collection.component.html',
+  styleUrls: ['./collection/collection.component.css']
 })
 export class CollectionComponent implements OnInit {
   collections: any[] = [];

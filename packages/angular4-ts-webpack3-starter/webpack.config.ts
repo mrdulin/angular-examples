@@ -16,6 +16,8 @@ const config: webpack.Configuration = {
     pathinfo: true
   },
 
+  devtool: "source-map",
+
   module: {
     rules: [
       {

@@ -6,15 +6,20 @@ import { RouterModule } from '@angular/router';
 
 import { rootRouterConfig } from './app.router';
 import { AppComponent } from './app.component';
-import { ListComponent } from './list';
+import { ListComponent, ListItemComponent } from './list';
+import { DetailComponent } from './detail';
+import { CollectionComponent } from './collection';
 
-import { ContactService, HeaderComponent, FooterComponent } from './shared';
+import { ContactService, HeaderComponent, FooterComponent, PhonePipe } from './shared';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent, FooterComponent,
-    ListComponent
+    ListComponent, ListItemComponent,
+    DetailComponent,
+    CollectionComponent,
+    PhonePipe
   ],
   imports: [
     BrowserModule,
