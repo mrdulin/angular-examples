@@ -1,7 +1,7 @@
 <my-header title='我的收藏'></my-header>
 <h3 *ngIf="collections.length === 0" class="no-collection">没有收藏</h3>
 <ul class="my-collection">
-  <li *ngFor="let collection of collections">
+  <li *ngFor="let collection of collections; trackBy: trackByFn">
     <a [routerLink]="['/list', collection.id]">
       <label>{{collection.name}}</label><span>{{collection.telNum | phone}}</span>
     </a>

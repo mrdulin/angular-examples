@@ -31,8 +31,11 @@ export class ListComponent implements OnInit {
     }
   }
 
-
   routerNavigate(id: number) {
     this._router.navigate(['/list', id]);
+  }
+
+  trackByFn(index: number, contact: any) {
+    return contact.id;
   }
 }

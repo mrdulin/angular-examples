@@ -28,7 +28,11 @@ export class DetailComponent implements OnInit, OnDestroy {
 
   collectTheContact() {
     this.detail.collection == 0 ? this.detail.collection = 1 : this.detail.collection = 0;
+    //TODO:
+  }
 
+  editContact() {
+    this._router.navigate(['/edit', this.contact_id]);
   }
 
   ngOnDestroy() {

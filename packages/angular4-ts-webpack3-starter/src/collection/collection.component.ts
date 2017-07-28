@@ -23,4 +23,8 @@ export class CollectionComponent implements OnInit {
   ngOnInit() {
     this.getCollectionContact();
   }
+
+  trackByFn(index: number, contact: any) {
+    return contact.id;
+  }
 }

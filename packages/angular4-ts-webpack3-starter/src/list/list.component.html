@@ -1,6 +1,6 @@
 <my-header title='所有联系人' [isShowCreateButton]='true'></my-header>
 <ul class="list">
-  <li *ngFor="let contact of contacts">
+  <li *ngFor="let contact of contacts; trackBy: trackByFn">
     <list-item [contact]='contact' (routerNavigate)='routerNavigate($event)'></list-item>
   </li>
 </ul>
