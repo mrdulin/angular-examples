@@ -6,11 +6,15 @@ import { RouterModule } from '@angular/router';
 
 import { rootRouterConfig } from './app.router';
 import { AppComponent } from './app.component';
+import { ListComponent } from './list';
 
+import { ContactService, HeaderComponent, FooterComponent } from './shared';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent, FooterComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +22,8 @@ import { AppComponent } from './app.component';
     HttpModule,
     RouterModule.forRoot(rootRouterConfig)
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [ContactService]
 })
 export class AppModule {
 

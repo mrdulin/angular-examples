@@ -8,14 +8,16 @@ import { ContactService } from '../shared/contact.service';
 })
 export class CollectionComponent implements OnInit {
   collections: any[] = [];
-  contactsL: any = {};
+  contacts: any = {};
 
   constructor(
     private _contactService: ContactService
   ) { }
 
   getCollectionContact() {
-
+    this._contactService.getCollections().subscribe((data: any) => {
+      this.collections = data;
+    })
   }
 
   ngOnInit() {

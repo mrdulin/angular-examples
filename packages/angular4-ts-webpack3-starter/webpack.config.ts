@@ -12,8 +12,8 @@ const config: webpack.Configuration = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    pathinfo: true,
+    filename: '[name].bundle.js',
+    pathinfo: true
   },
 
   module: {
@@ -30,13 +30,17 @@ const config: webpack.Configuration = {
     contentBase: path.resolve(__dirname, 'src'),
     port: PORT,
     host: '0.0.0.0',
-    historyApiFallback: false,
+    historyApiFallback: true,
     noInfo: false,
     stats: 'minimal'
   },
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
+    alias: {
+      src: path.resolve(__dirname, 'src'),
+      shared: path.resolve(__dirname, 'src/shared')
+    }
   },
 
   plugins: [
