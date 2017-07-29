@@ -1,0 +1,44 @@
+h3.new-contact{
+  height: 35px;
+  line-height: 35px;
+  font-size: 16px;
+  color: #ffffff;
+  text-align: center;
+  background-color: #3DD689;
+}
+.operate{
+  padding: 20px 15px 0;
+}
+.form-control{
+  height: 50px;
+}
+.form-control label{
+  float: left;
+}
+.form-control div{
+  position: relative;
+  margin-left: 45px;
+}
+.form-control input[type=text]{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #E0E0E0;
+  outline:none;
+  width: 100%;
+}
+.form-control i{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 5px;
+  background-color: #fff;
+}
+.form-control i.green{
+  background-color: #3DD689;
+}
+.form-control i.red{
+  background-color: red;
+}
+

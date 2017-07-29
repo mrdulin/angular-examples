@@ -9,8 +9,9 @@ import { AppComponent } from './app.component';
 import { ListComponent, ListItemComponent } from './list';
 import { DetailComponent } from './detail';
 import { CollectionComponent } from './collection';
+import { EditComponent } from './edit';
 
-import { ContactService, HeaderComponent, FooterComponent, PhonePipe } from './shared';
+import { ContactService, HeaderComponent, FooterComponent, PhonePipe, UtilService } from './shared';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ContactService, HeaderComponent, FooterComponent, PhonePipe } from './s
     ListComponent, ListItemComponent,
     DetailComponent,
     CollectionComponent,
+    EditComponent,
     PhonePipe
   ],
   imports: [
@@ -28,7 +30,7 @@ import { ContactService, HeaderComponent, FooterComponent, PhonePipe } from './s
     RouterModule.forRoot(rootRouterConfig)
   ],
   bootstrap: [AppComponent],
-  providers: [ContactService]
+  providers: [ContactService, UtilService]
 })
 export class AppModule {
 

@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { ListComponent } from './list';
 import { DetailComponent } from './detail';
 import { CollectionComponent } from './collection';
+import { EditComponent } from './edit';
 
 export const rootRouterConfig: Routes = [
   {
@@ -21,5 +22,9 @@ export const rootRouterConfig: Routes = [
   {
     path: 'collection',
     component: CollectionComponent
+  },
+  {
+    path: 'edit/:id',
+    component: EditComponent
   }
 ];
