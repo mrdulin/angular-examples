@@ -30,7 +30,7 @@ const config: webpack.Configuration = {
     contentBase: path.resolve(__dirname, 'src'),
     port: PORT,
     host: '0.0.0.0',
-    historyApiFallback: false,
+    historyApiFallback: true,
     noInfo: false,
     stats: 'minimal'
   },
