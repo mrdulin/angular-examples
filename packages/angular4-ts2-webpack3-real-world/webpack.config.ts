@@ -22,6 +22,20 @@ const config: webpack.Configuration = {
         test: /\.ts$/,
         loader: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              alias: {
+                '@angular': path.resolve(__dirname, 'node_modules/@angular')
+              }
+            }
+          }
+        ]
       }
     ]
   },
@@ -30,13 +44,13 @@ const config: webpack.Configuration = {
     contentBase: path.resolve(__dirname, 'src'),
     port: PORT,
     host: '0.0.0.0',
-    historyApiFallback: true,
+    historyApiFallback: false,
     noInfo: false,
     stats: 'minimal'
   },
 
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.json']
   },
 
   plugins: [
