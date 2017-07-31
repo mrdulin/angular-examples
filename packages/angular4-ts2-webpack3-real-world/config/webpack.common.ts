@@ -5,7 +5,6 @@ import * as Merge from 'webpack-merge';
 declare const __dirname: string;
 
 const context: string = path.resolve(__dirname, '../');
-console.log(context);
 
 const config: webpack.Configuration = {
   context,
@@ -15,11 +14,13 @@ const config: webpack.Configuration = {
   },
 
   output: {
-    path: path.resolve(__dirname, '../dist')
+    path: path.resolve(__dirname, '../dist'),
+    sourceMapFilename: '[name].map'
   },
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
+    modules: [path.join(__dirname, '../src'), 'node_modules'],
     alias: {
       '@angular': path.resolve(__dirname, '../node_modules/@angular'),
       'material-design-icons': path.resolve(__dirname, '../node_modules/material-design-icons')
@@ -28,6 +29,17 @@ const config: webpack.Configuration = {
 
   module: {
     rules: [
+      {
+        test: /\.ts$/,
+        exclude: [
+          /node_modules/,
+          /\.(spec|e2e)\.ts$/
+        ],
+        use: [
+          'awesome-typescript-loader',
+          'angular2-template-loader'
+        ]
+      },
       {
         test: /\.(html|css)$/,
         use: 'raw-loader',
@@ -43,6 +55,11 @@ const config: webpack.Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      chunks: ['app'],
+      minChunks: module => /node_modules/.test(module.resource)
     }),
     //解决打包编译时，循环依赖的错误
     new webpack.ContextReplacementPlugin(

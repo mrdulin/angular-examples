@@ -20,24 +20,11 @@ const config: webpack.Configuration = Merge(webpackCommonConfig, {
     contentBase: path.resolve(__dirname, '../src'),
     port: PORT,
     host: '0.0.0.0',
-    historyApiFallback: false,
-    noInfo: false,
-    stats: 'minimal'
+    historyApiFallback: false
   },
 
   module: {
     rules: [
-      {
-        test: /\.ts$/,
-        exclude: [
-          /node_modules/,
-          /\.(spec|e2e)\.ts$/
-        ],
-        use: [
-          'awesome-typescript-loader',
-          'angular2-template-loader'
-        ]
-      },
       {
         test: /\.async\.(html|css)$/,
         use: [
@@ -50,6 +37,7 @@ const config: webpack.Configuration = Merge(webpackCommonConfig, {
 
   plugins: [
     new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development')

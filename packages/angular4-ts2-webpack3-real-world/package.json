@@ -6,9 +6,10 @@
   "author": "mrdulin <novaline@qq.com>",
   "license": "MIT",
   "scripts": {
-    "server": "webpack-dev-server --progress --colors --config ./config/webpack.dev.ts",
+    "server": "webpack-dev-server --progress --inline --config ./config/webpack.dev.ts",
     "start": "npm run server",
     "build": "npm run clean && webpack --env=prod --progress --colors --config ./config/webpack.config.ts && npm run output:size",
+    "build:dev": "npm run clean && webpack --env=dev --progress --colors --config ./config/webpack.config.ts && npm run output:size",
     "output:size": "du -ah ./dist",
     "clean": "rm -rf dist"
   },

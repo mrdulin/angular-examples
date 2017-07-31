@@ -16,6 +16,8 @@ const config: webpack.Configuration = Merge(webpackCommonConfig, {
       '@angular/forms',
       '@angular/http',
       '@angular/router',
+      '@angular/material',
+      '@angular/animations',
       '@angular/platform-browser',
       '@angular/platform-browser-dynamic',
       'rxjs'
@@ -45,14 +47,22 @@ const config: webpack.Configuration = Merge(webpackCommonConfig, {
     new ExtractTextPlugin({
       filename: 'styles/[name].[contenthash:16].css'
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: Infinity
-    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
       }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      beautify: false,
+      mangle: {
+        screw_ie8: true,
+        keep_fnames: true
+      },
+      compress: {
+        screw_ie8: true
+      },
+      comments: false
     })
   ]
 
