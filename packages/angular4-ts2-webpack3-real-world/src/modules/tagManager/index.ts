@@ -1,1 +1,1 @@
-export * from './tagManager.component';
+export * from './module';

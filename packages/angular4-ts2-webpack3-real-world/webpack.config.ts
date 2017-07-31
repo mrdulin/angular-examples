@@ -46,6 +46,7 @@ const config: webpack.Configuration = {
   },
 
   devServer: {
+    //开发时，模块的根路径
     contentBase: path.resolve(__dirname, 'src'),
     port: PORT,
     host: '0.0.0.0',
@@ -62,6 +63,7 @@ const config: webpack.Configuration = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
+    //解决打包编译时，循环依赖的错误
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)@angular/,
       path.resolve(__dirname, '../src')

@@ -2,14 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { FormsModule }   from '@angular/forms';
-import { routes } from './app.routes';
+import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './modules/home';
-import { tagManagerComponent } from './modules/tagManager';
 import { SidebarComponent } from './modules/sidebar';
 import { ContentComponent } from './modules/content';
 import { DiseaseCenterComponent } from './modules/diseaseCenter';
@@ -20,8 +18,6 @@ import './style.css';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    tagManagerComponent,
     ContentComponent,
     SidebarComponent,
     DiseaseCenterComponent,
@@ -32,7 +28,8 @@ import './style.css';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    RouterModule.forRoot(routes, { useHash: true })
+
+    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })
