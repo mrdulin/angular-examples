@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { HomeComponent } from './home';
 
-import { DiseaseCenterRoutingModule } from './dc-routing.module';
+import { DiseaseCenterRoutingModule } from './diseaseCenter-routing.module';
 
 @NgModule({
   declarations: [

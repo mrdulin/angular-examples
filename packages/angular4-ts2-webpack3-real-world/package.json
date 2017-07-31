@@ -6,9 +6,9 @@
   "author": "mrdulin <novaline@qq.com>",
   "license": "MIT",
   "scripts": {
-    "server": "webpack-dev-server --progress --colors",
+    "server": "webpack-dev-server --progress --colors --config ./config/webpack.dev.ts",
     "start": "npm run server",
-    "build": "npm run clean && webpack --progress --colors && npm run output:size",
+    "build": "npm run clean && webpack --env=prod --progress --colors --config ./config/webpack.config.ts && npm run output:size",
     "output:size": "du -ah ./dist",
     "clean": "rm -rf dist"
   },
@@ -19,6 +19,7 @@
     "@types/node": "^8.0.17",
     "@types/webpack": "^3.0.5",
     "@types/webpack-dev-server": "^2.4.0",
+    "@types/webpack-merge": "^0.0.5",
     "angular-router-loader": "^0.6.0",
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^3.2.2",
@@ -31,7 +32,8 @@
     "typescript": "^2.4.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.4.1",
-    "webpack-dev-server": "^2.6.1"
+    "webpack-dev-server": "^2.6.1",
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "@angular/animations": "^4.3.2",

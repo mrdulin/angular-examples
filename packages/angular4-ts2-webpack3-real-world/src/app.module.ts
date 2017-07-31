@@ -10,16 +10,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './modules/sidebar';
 import { ContentComponent } from './modules/content';
-import { DoctorCenterComponent } from './modules/doctorCenter';
 
-import './style.css';
+import './style.async.css';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentComponent,
-    SidebarComponent,
-    DoctorCenterComponent
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

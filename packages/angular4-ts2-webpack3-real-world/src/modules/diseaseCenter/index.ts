@@ -1,1 +1,1 @@
-export * from './dc.module';
+export * from './diseaseCenter.module';

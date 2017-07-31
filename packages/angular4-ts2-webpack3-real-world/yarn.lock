@@ -144,6 +144,12 @@
     "@types/serve-static" "*"
     "@types/webpack" "*"
 
+"@types/webpack-merge@^0.0.5":
+  version "0.0.5"
+  resolved "http://registry.npm.taobao.org/@types/webpack-merge/download/@types/webpack-merge-0.0.5.tgz#bdbc6a4839dcb67c2d57d4e8d775f197946836a4"
+  dependencies:
+    "@types/webpack" "*"
+
 "@types/webpack@*", "@types/webpack@^3.0.5":
   version "3.0.5"
   resolved "http://registry.npm.taobao.org/@types/webpack/download/@types/webpack-3.0.5.tgz#da3bca3665071ccbaba9ff929e361db85d3cc48a"
@@ -4300,6 +4306,12 @@ webpack-dev-server@^2.6.1:
     supports-color "^3.1.1"
     webpack-dev-middleware "^1.11.0"
     yargs "^6.0.0"
+
+webpack-merge@^4.1.0:
+  version "4.1.0"
+  resolved "http://registry.npm.taobao.org/webpack-merge/download/webpack-merge-4.1.0.tgz#6ad72223b3e0b837e531e4597c199f909361511e"
+  dependencies:
+    lodash "^4.17.4"
 
 webpack-sources@^1.0.1:
   version "1.0.1"

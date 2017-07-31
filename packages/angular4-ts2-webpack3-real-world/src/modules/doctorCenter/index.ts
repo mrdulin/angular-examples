@@ -1,1 +1,1 @@
-export * from './doctorCenter.component';
+export * from './doctorCenter.module';
