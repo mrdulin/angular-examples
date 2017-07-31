@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { TagManagerRoutingModule } from './routing.module';
+import { TagManagerRoutingModule } from './tm-routing.module';
 
 import { SicknessComponent } from './sickness';
 

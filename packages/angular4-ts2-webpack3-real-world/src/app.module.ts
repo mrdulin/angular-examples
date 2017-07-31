@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './modules/sidebar';
 import { ContentComponent } from './modules/content';
-import { DiseaseCenterComponent } from './modules/diseaseCenter';
 import { DoctorCenterComponent } from './modules/doctorCenter';
 
 import './style.css';
@@ -20,7 +19,6 @@ import './style.css';
     AppComponent,
     ContentComponent,
     SidebarComponent,
-    DiseaseCenterComponent,
     DoctorCenterComponent
   ],
   imports: [

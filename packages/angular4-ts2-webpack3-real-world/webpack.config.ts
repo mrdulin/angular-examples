@@ -1,18 +1,31 @@
 import * as webpack from 'webpack';
 import * as path from 'path';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 declare const __dirname: string;
 
 const PORT: number = 2222;
 
 const config: webpack.Configuration = {
   entry: {
-    app: path.resolve(__dirname, 'src/main.ts')
+    app: path.resolve(__dirname, 'src/main.ts'),
+    vendor: [
+      '@angular/core',
+      '@angular/common',
+      '@angular/forms',
+      '@angular/http',
+      '@angular/router',
+      '@angular/platform-browser',
+      '@angular/platform-browser-dynamic',
+      'rxjs'
+    ]
   },
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    // publicPath: '/dist/',
+    filename: 'scripts/[name].[hash:16].js',
+    // chunkFilename: '[name]-chunk.js',
     pathinfo: true,
   },
 
@@ -20,23 +33,42 @@ const config: webpack.Configuration = {
     rules: [
       {
         test: /\.ts$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
+        exclude: [
+          /node_modules/,
+          /\.(spec|e2e)\.ts$/
+        ],
         use: [
-          'style-loader',
+          'awesome-typescript-loader',
           {
-            loader: 'css-loader',
+            loader: 'angular2-template-loader',
             options: {
-              alias: {
-                '@angular': path.resolve(__dirname, 'node_modules/@angular'),
-                'material-design-icons': path.resolve(__dirname, 'node_modules/material-design-icons')
-              }
+              keepUrl: false
             }
           }
         ]
+      },
+      {
+        test: /\.(html|css)$/,
+        use: [
+          'raw-loader'
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                alias: {
+                  '@angular': path.resolve(__dirname, 'node_modules/@angular'),
+                  'material-design-icons': path.resolve(__dirname, 'node_modules/material-design-icons')
+                }
+              }
+            }
+          ]
+        })
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
@@ -44,6 +76,8 @@ const config: webpack.Configuration = {
       }
     ]
   },
+
+  devtool: 'source-map',
 
   devServer: {
     //开发时，模块的根路径
@@ -60,9 +94,17 @@ const config: webpack.Configuration = {
   },
 
   plugins: [
+    new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
+    new ExtractTextPlugin({
+      filename: 'styles/[name].[contenthash:16].css'
+    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+    //   minChunks: Infinity
+    // }),
     //解决打包编译时，循环依赖的错误
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)@angular/,
