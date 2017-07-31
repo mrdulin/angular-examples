@@ -31,11 +31,16 @@ const config: webpack.Configuration = {
             loader: 'css-loader',
             options: {
               alias: {
-                '@angular': path.resolve(__dirname, 'node_modules/@angular')
+                '@angular': path.resolve(__dirname, 'node_modules/@angular'),
+                'material-design-icons': path.resolve(__dirname, 'node_modules/material-design-icons')
               }
             }
           }
         ]
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader'
       }
     ]
   },
