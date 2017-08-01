@@ -8,8 +8,8 @@ import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { SidebarComponent } from './modules/sidebar';
-import { ContentComponent } from './modules/content';
+import { SidebarComponent } from './sidebar';
+import { ContentComponent } from './content';
 
 import './style.async.css';
 

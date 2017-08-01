@@ -1,11 +1,11 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { SidebarComponent } from './modules/sidebar';
-import { ContentComponent } from './modules/content';
+import { SidebarComponent } from './sidebar';
+import { ContentComponent } from './content';
 
-import { DoctorCenterModule } from './modules/doctorCenter';
-import { TagManagerModule } from './modules/tagManager';
-import { DiseaseCenterModule } from './modules/diseaseCenter';
+import { DoctorCenterModule } from '../doctorCenter';
+import { TagManagerModule } from '../tagManager';
+import { DiseaseCenterModule } from '../diseaseCenter';
 
 const routes: Routes = [
   {
@@ -27,11 +27,11 @@ const routes: Routes = [
       // -- 异步加载的特性模块 --
       {
         path: '',
-        loadChildren: './modules/diseaseCenter/diseaseCenter.module#DiseaseCenterModule'
+        loadChildren: '../diseaseCenter/diseaseCenter.module#DiseaseCenterModule'
       },
       {
         path: '',
-        loadChildren: './modules/doctorCenter/doctorCenter.module.ts#DoctorCenterModule'
+        loadChildren: '../doctorCenter/doctorCenter.module.ts#DoctorCenterModule'
       }
       // --
     ]
