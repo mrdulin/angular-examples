@@ -10,7 +10,7 @@ import { DiseaseCenterModule } from '../diseaseCenter';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/tag-manager',
+    redirectTo: 'tag-manager',
     pathMatch: 'full'
   },
   {
@@ -43,7 +43,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/tag-manager',
+    redirectTo: 'tag-manager',
     pathMatch: 'full'
   }
 ];
