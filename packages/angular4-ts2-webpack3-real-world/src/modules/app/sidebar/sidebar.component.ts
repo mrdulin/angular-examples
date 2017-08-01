@@ -17,9 +17,9 @@ export class SidebarComponent {
   navs: ISidebarNav[] = [
     {
       key: 'tag-manager', name: '标签管理', routerLink: ['tag-manager'], children: [
-        { key: 'sickness', name: '标准疾病管理', routerLink: ['../'] },
-        { key: 'department', name: '标准科室管理', routerLink: ['../department'] },
-        { key: 'attribute', name: '属性库管理', routerLink: ['../attribute'] }
+        { key: 'sickness', name: '标准疾病管理', routerLink: ['tag-manager/sickness'] },
+        { key: 'department', name: '标准科室管理', routerLink: ['tag-manager/department'] },
+        { key: 'attribute', name: '属性库管理', routerLink: ['tag-manager/attribute'] }
       ]
     },
     { key: 'disease-center', name: '专家专科业务', routerLink: ['disease-center'] },
