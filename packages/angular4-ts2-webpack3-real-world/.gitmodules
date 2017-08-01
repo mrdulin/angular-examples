@@ -1,0 +1,3 @@
+[submodule "src/modules/regensburg"]
+	path = src/modules/regensburg
+	url = git@10.0.128.104:social/regensburg
