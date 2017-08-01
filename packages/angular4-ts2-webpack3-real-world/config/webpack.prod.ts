@@ -7,6 +7,8 @@ import * as Merge from 'webpack-merge';
 import webpackCommonConfig from './webpack.common';
 declare const __dirname: string;
 
+const PORT: number = 2222;
+
 const config: webpack.Configuration = Merge(webpackCommonConfig, {
 
   entry: {
@@ -26,7 +28,8 @@ const config: webpack.Configuration = Merge(webpackCommonConfig, {
 
   output: {
     filename: 'scripts/[name].[hash:16].js',
-    publicPath: '/'
+    chunkFilename: 'scripts/[id].[name]-[chunkhash:16].chunk.js',
+    publicPath: `http://localhost:${PORT}/`
   },
 
   devtool: 'source-map',
@@ -56,11 +59,19 @@ const config: webpack.Configuration = Merge(webpackCommonConfig, {
       sourceMap: true,
       beautify: false,
       mangle: {
-        screw_ie8: true,
-        keep_fnames: true
+        screw_ie8: true
       },
       compress: {
-        screw_ie8: true
+        unused: true,
+        dead_code: true,
+        drop_debugger: true,
+        conditionals: true,
+        evaluate: true,
+        drop_console: true,
+        sequences: true,
+        booleans: true,
+        screw_ie8: true,
+        warnings: false
       },
       comments: false
     })

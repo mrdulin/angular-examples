@@ -11,13 +11,15 @@ const config: webpack.Configuration = Merge(webpackCommonConfig, {
 
   output: {
     filename: 'scripts/[name].js',
-    pathinfo: true
+    chunkFilename: 'scripts/[id].[name]-chunk.js',
+    pathinfo: true,
+    publicPath: `http://localhost:${PORT}/`
   },
 
   devtool: 'cheap-module-source-map',
 
   devServer: {
-    contentBase: path.resolve(__dirname, '../src'),
+    contentBase: path.resolve(__dirname, '../dist'),
     port: PORT,
     host: '0.0.0.0',
     historyApiFallback: false

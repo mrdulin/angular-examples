@@ -8,7 +8,7 @@ const context: string = path.resolve(__dirname, '../');
 
 const config: webpack.Configuration = {
   context,
-
+  cache: true,
   entry: {
     app: './src/main.ts'
   },
@@ -37,6 +37,7 @@ const config: webpack.Configuration = {
         ],
         use: [
           'awesome-typescript-loader',
+          'angular-router-loader',
           'angular2-template-loader'
         ]
       },

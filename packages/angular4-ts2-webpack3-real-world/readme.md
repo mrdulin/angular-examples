@@ -1,4 +1,9 @@
 
+__姿势:__
+
+* `yarn start`启动`webpack-dev-server`（支持异步`chunk`模块加载）
+* `yarn run build:dev`, 使用`webpack.dev.ts`配置编译打包出开发环境下的静态资源
+* `yarn run build`, 使用`webpack.prod.ts`配置编译打包出生产环境下的静态资源
 
 __注意：__
 
@@ -11,3 +16,4 @@ __TODO：__
 
   https://segmentfault.com/a/1190000008739157
   https://angular.cn/docs/ts/latest/cookbook/aot-compiler.html
+

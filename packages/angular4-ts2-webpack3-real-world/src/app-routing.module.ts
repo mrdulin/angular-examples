@@ -17,21 +17,23 @@ const routes: Routes = [
     path: '',
     component: ContentComponent,
     children: [
+      // -- 同步预加载特性模块 --
       {
         path: '',
-        // 同步加载
         loadChildren: () => TagManagerModule
       },
+      // --
+
+      // -- 异步加载的特性模块 --
       {
         path: '',
-        // TODO: 异步加载
-        // loadChildren: './modules/diseaseCenter/dc.module.ts#DiseaseCenterModule'
-        loadChildren: () => DiseaseCenterModule
+        loadChildren: './modules/diseaseCenter/diseaseCenter.module#DiseaseCenterModule'
       },
       {
         path: '',
-        loadChildren: () => DoctorCenterModule
+        loadChildren: './modules/doctorCenter/doctorCenter.module.ts#DoctorCenterModule'
       }
+      // --
     ]
   },
   {

@@ -8,10 +8,11 @@
   "scripts": {
     "server": "webpack-dev-server --progress --inline --config ./config/webpack.dev.ts",
     "start": "npm run server",
-    "build": "npm run clean && webpack --env=prod --progress --colors --config ./config/webpack.config.ts && npm run output:size",
-    "build:dev": "npm run clean && webpack --env=dev --progress --colors --config ./config/webpack.config.ts && npm run output:size",
+    "build": "npm run clean && webpack --env=prod --progress --colors --config ./config/webpack.config.ts && npm run http-server",
+    "build:dev": "npm run clean && webpack --env=dev --progress --colors --config ./config/webpack.config.ts && npm run http-server",
     "output:size": "du -ah ./dist",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "http-server": "http-server ./dist -p 2222 -a 0.0.0.0 -o"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.42",
@@ -27,6 +28,7 @@
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^2.29.0",
+    "http-server": "^0.10.0",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.18.2",
     "ts-node": "^3.3.0",
