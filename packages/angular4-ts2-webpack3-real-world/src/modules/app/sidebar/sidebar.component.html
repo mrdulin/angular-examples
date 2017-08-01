@@ -5,7 +5,8 @@
 
       <ul class='sidebar-nav-list' *ngIf='nav.children?.length'>
         <li class='sidebar-nav-list-item' *ngFor='let n of nav.children'>
-          <a [routerLink]='n.routerLink'>{{n.name}}</a>
+             <a [routerLink]="n.routerLink">{{n.name}}</a>
+            <!-- <a (click)='onListItemClick(n)'>{{n.name}}</a> -->
         </li>
       </ul>
     </li>

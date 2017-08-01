@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar';
 import { ContentComponent } from './content';
 
+import { StringService } from 'common/services';
+
 import './style.async.css';
 
 @NgModule({
@@ -27,7 +29,8 @@ import './style.async.css';
 
     AppRoutingModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [StringService]
 })
 export class AppModule {
 

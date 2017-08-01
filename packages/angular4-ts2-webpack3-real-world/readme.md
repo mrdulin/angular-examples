@@ -17,4 +17,11 @@ __TODO：__
   https://segmentfault.com/a/1190000008739157
   https://angular.cn/docs/ts/latest/cookbook/aot-compiler.html
 
-[  ] `sidebar`导航封装成`tree` `component`
+[  ] `sidebar`导航封装成`tree` `component`.
+
+
+__流程：__
+
+__废弃:__
+
+[  ] 运行时动态配置路由表, 现在的方案是静态配置，编译时在`angular`内部生成路由映射 [#4234](https://github.com/angular/angular-cli/issues/4234)

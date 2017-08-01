@@ -1,11 +1,12 @@
-import { Routes, RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { Routes, RouterModule, Router } from '@angular/router';
+import { NgModule, OnInit } from '@angular/core';
 import { SidebarComponent } from './sidebar';
 import { ContentComponent } from './content';
 
-import { DoctorCenterModule } from '../doctorCenter';
 import { TagManagerModule } from '../tagManager';
-import { DiseaseCenterModule } from '../diseaseCenter';
+import { RouterService } from 'common/services';
+
+import * as config from 'root/config/modules.json';
 
 const routes: Routes = [
   {
@@ -54,8 +55,24 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule
-  ]
+  ],
+  providers: [RouterService]
 })
 export class AppRoutingModule {
+  constructor(
+    private _router: Router,
+    private _routerService: RouterService
+  ) {
+    // this.loadAsyncRoutes();
+  }
+
+  // private loadAsyncRoutes() {
+  //   const asyncRoutes: any[] = this._routerService.loadAsyncRoutes((<any>config).mods);
+  //   asyncRoutes.forEach((route: any) => {
+  //     routes[1].children.push(route);
+  //   });
+  //   this._router.resetConfig(routes);
+  //   console.log(this._router.config);
+  // }
 
 }

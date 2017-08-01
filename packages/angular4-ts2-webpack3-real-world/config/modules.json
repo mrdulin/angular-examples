@@ -1,0 +1,16 @@
+{
+  "mods": [
+    {
+      "key": "diseaseCenter",
+      "path": "../diseaseCenter/diseaseCenter.module#DiseaseCenterModule",
+      "name": "专家专科业务",
+      "async": true
+    },
+    {
+      "key": "doctorCenter",
+      "path": "../doctorCenter/doctorCenter.module.ts#DoctorCenterModule",
+      "name": "医生中心",
+      "async": true
+    }
+  ]
+}

@@ -2,19 +2,18 @@ import * as webpack from 'webpack';
 import * as path from 'path';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as Merge from 'webpack-merge';
+import * as helpers from './helpers';
 declare const __dirname: string;
 
-const context: string = path.resolve(__dirname, '../');
-
 const config: webpack.Configuration = {
-  context,
+  context: helpers.resolve('../'),
   cache: true,
   entry: {
     app: './src/main.ts'
   },
 
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: helpers.resolve('../dist'),
     sourceMapFilename: '[name].map'
   },
 
@@ -22,9 +21,11 @@ const config: webpack.Configuration = {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     modules: [path.join(__dirname, '../src'), 'node_modules'],
     alias: {
-      '@angular': path.resolve(__dirname, '../node_modules/@angular'),
-      'material-design-icons': path.resolve(__dirname, '../node_modules/material-design-icons'),
-      'normalize.css': path.resolve(__dirname, '../node_modules/normalize.css/normalize.css')
+      '@angular': helpers.resolve('../node_modules/@angular'),
+      'material-design-icons': helpers.resolve('../node_modules/material-design-icons'),
+      'normalize.css': helpers.resolve('../node_modules/normalize.css/normalize.css'),
+      'root': helpers.resolve('..'),
+      'common': helpers.resolve('../src/common')
     }
   },
 

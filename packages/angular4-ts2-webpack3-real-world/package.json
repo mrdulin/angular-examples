@@ -6,6 +6,7 @@
   "author": "mrdulin <novaline@qq.com>",
   "license": "MIT",
   "scripts": {
+    "cfg:router": "node genRouter.js",
     "server": "webpack-dev-server --progress --inline --config ./config/webpack.dev.ts",
     "start": "npm run server",
     "build": "npm run clean && webpack --env=prod --progress --colors --config ./config/webpack.config.ts && npm run http-server",
