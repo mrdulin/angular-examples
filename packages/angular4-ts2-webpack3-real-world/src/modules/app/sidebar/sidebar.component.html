@@ -1,5 +1,13 @@
 <aside class='sidebar'>
-  <md-nav-list>
-    <md-list-item *ngFor='let nav of navs' [routerLink]='nav.routerLink'> {{nav.name}} </md-list-item>
-  </md-nav-list>
+  <ul class='sidebar-nav-list'>
+    <li class='sidebar-nav-list-item' *ngFor='let nav of navs'>
+      <a routerLinkActive='active' [routerLink]='nav.routerLink'>{{nav.name}}</a>
+
+      <ul class='sidebar-nav-list' *ngIf='nav.children?.length'>
+        <li class='sidebar-nav-list-item' *ngFor='let n of nav.children'>
+          <a [routerLink]='n.routerLink'>{{n.name}}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </aside>
