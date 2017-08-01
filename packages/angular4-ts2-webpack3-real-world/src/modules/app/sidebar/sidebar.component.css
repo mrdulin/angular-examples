@@ -1,6 +1,9 @@
 .sidebar{
-  float: left;
+  position: absolute;
+  top: 56px;
+  bottom: 0;
+  left: 0;
   width: 200px;
   border-right: 1px solid #ddd;
-  background: gold;
+  box-sizing: border-box;
 }

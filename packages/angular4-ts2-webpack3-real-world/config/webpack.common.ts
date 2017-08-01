@@ -23,7 +23,8 @@ const config: webpack.Configuration = {
     modules: [path.join(__dirname, '../src'), 'node_modules'],
     alias: {
       '@angular': path.resolve(__dirname, '../node_modules/@angular'),
-      'material-design-icons': path.resolve(__dirname, '../node_modules/material-design-icons')
+      'material-design-icons': path.resolve(__dirname, '../node_modules/material-design-icons'),
+      'normalize.css': path.resolve(__dirname, '../node_modules/normalize.css/normalize.css')
     }
   },
 

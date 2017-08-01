@@ -1,14 +1,5 @@
 <aside class='sidebar'>
-  <p>sidebar</p>
-  <ul>
-    <li>
-      <a [routerLink]='["/tag-manager"]'>标签管理</a>
-    </li>
-    <li>
-      <a [routerLink]='["/disease-center"]'>专家专科业务</a>
-    </li>
-    <li>
-      <a [routerLink]='["/doctor-center"]'>医生中心</a>
-    </li>
-  </ul>
+  <md-nav-list>
+    <md-list-item *ngFor='let nav of navs' [routerLink]='nav.routerLink'> {{nav.name}} </md-list-item>
+  </md-nav-list>
 </aside>
