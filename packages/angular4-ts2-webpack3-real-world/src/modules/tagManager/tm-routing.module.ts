@@ -7,6 +7,9 @@ import { AttributeComponent } from './attribute';
 export const routes: Routes = [
   {
     path: 'tag-manager',
+    data: {
+      name: '标签管理'
+    },
     children: [
       {
         path: '',
@@ -15,15 +18,24 @@ export const routes: Routes = [
       },
       {
         path: 'sickness',
-        component: SicknessComponent
+        component: SicknessComponent,
+        data: {
+          name: '标准疾病管理'
+        }
       },
       {
         path: 'department',
-        component: DepartmentComponent
+        component: DepartmentComponent,
+        data: {
+          name: '标准科室管理'
+        }
       },
       {
         path: 'attribute',
-        component: AttributeComponent
+        component: AttributeComponent,
+        data: {
+          name: '属性库管理'
+        }
       }
     ]
   }

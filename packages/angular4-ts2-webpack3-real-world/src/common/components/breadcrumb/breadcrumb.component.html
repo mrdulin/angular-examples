@@ -1,0 +1,6 @@
+<ul class='breadcrumb'>
+  <li class='breadcrumb-item' *ngFor='let url of urls; let last = last'>
+    <a role="button">{{url.name}}</a>
+    <span class='breadcrumb-divide' *ngIf='!last'>/</span>
+  </li>
+</ul>

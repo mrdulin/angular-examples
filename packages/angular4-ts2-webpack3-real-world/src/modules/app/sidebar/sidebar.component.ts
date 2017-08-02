@@ -1,37 +1,21 @@
-import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-
-interface ISidebarNav {
-  key: string;
-  name: string;
-  routerLink: any[];
-  children?: ISidebarNav[];
-}
+import { Component, OnInit } from '@angular/core';
+import { NavigationService, ISidebarNav } from 'common/services';
 
 @Component({
   selector: 'sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent {
-  navs: ISidebarNav[] = [
-    {
-      key: 'tag-manager', name: '标签管理', routerLink: ['tag-manager'], children: [
-        { key: 'sickness', name: '标准疾病管理', routerLink: ['tag-manager/sickness'] },
-        { key: 'department', name: '标准科室管理', routerLink: ['tag-manager/department'] },
-        { key: 'attribute', name: '属性库管理', routerLink: ['tag-manager/attribute'] }
-      ]
-    },
-    { key: 'disease-center', name: '专家专科业务', routerLink: ['disease-center'] },
-    { key: 'doctor-center', name: '医生中心', routerLink: ['doctor-center'] }
-  ]
+export class SidebarComponent implements OnInit {
+
+  public navs: ISidebarNav[] = [];
+
   constructor(
-    private _router: Router,
-    private _route: ActivatedRoute
+    private _navigationService: NavigationService
   ) { }
 
-  // private onListItemClick(nav: ISidebarNav) {
-  //   console.log(nav);
-  //   this._router.navigate(nav.routerLink, { relativeTo: this._route });
-  // }
+  ngOnInit() {
+    this.navs = this._navigationService.navs;
+  }
+
 }

@@ -10,8 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar';
 import { ContentComponent } from './content';
+import { BreadcrumbComponent } from 'common/components/breadcrumb';
 
-import { StringService } from 'common/services';
+import { StringService, NavigationService } from 'common/services';
 
 import './style.async.css';
 
@@ -19,7 +20,8 @@ import './style.async.css';
   declarations: [
     AppComponent,
     ContentComponent,
-    SidebarComponent
+    SidebarComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,7 @@ import './style.async.css';
     AppRoutingModule
   ],
   bootstrap: [AppComponent],
-  providers: [StringService]
+  providers: [StringService, NavigationService]
 })
 export class AppModule {
 
