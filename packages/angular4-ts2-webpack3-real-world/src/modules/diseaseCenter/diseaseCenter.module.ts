@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 
-import { HomeComponent } from './home';
+import { diseaseHomeComponent } from './diseaseHome';
 
 import { DiseaseCenterRoutingModule } from './diseaseCenter-routing.module';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    diseaseHomeComponent
   ],
   imports: [
     DiseaseCenterRoutingModule

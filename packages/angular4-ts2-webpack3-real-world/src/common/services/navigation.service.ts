@@ -17,7 +17,15 @@ export class NavigationService {
         { key: 'attribute', name: '属性库管理', routerLink: ['/tag-manager/attribute'] }
       ]
     },
-    { key: 'disease-center', name: '专家专科业务', routerLink: ['disease-center'] },
+    { 
+      key: 'disease-center', name: '专家专科业务', routerLink: ['disease-center'], children: [
+        { key: 'disease-home', name: '聚合页配置', routerLink: ['disease-home'] },
+        { key: 'specialist-home', name: '专家专科页配置', routerLink: ['specialist-home'] },
+        { key: 'hospital-home', name: '医院配置', routerLink: ['hospital-home'] },
+        { key: 'doctor-home', name: '医生配置', routerLink: ['doctor-home'] },
+        { key: 'serve-city', name: '服务城市配置', routerLink: ['serve-city'] }
+      ] 
+    },
     { key: 'doctor-center', name: '医生中心', routerLink: ['doctor-center'] }
   ]
 }

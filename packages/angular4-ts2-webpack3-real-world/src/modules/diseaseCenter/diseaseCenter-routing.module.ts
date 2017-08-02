@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
-import { HomeComponent } from './home';
+import { diseaseHomeComponent } from './diseaseHome';
 
 const routes: Routes = [
   {
@@ -9,12 +9,12 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'disease-home',
         pathMatch: 'full'
       },
       {
-        path: 'home',
-        component: HomeComponent
+        path: 'disease-home',
+        component: diseaseHomeComponent
       }
     ]
   }
