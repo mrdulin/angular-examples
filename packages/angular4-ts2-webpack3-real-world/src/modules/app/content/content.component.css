@@ -1,4 +1,19 @@
 .content{
   margin-left: 240px;
   padding: 20px;
+  position: absolute;
+  top: 56px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+}
+
+.content-header{
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.content-main{
+  padding-top: 10px;
 }

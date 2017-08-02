@@ -1,1 +1,35 @@
-<p>sickness</p>
+ <form novalidate (submit)='onSubmit()' class='form'>
+  <div>
+    <label for="queryType">查询类别：</label>
+    <select class='select' name='queryType' [(ngModel)]='selectedQueryType'>
+      <option *ngFor='let queryType of queryTypes' [ngValue]='queryType'>
+        {{queryType.name}}
+      </option>
+    </select>
+  </div>
+  <div>
+    <label for="keyword">类别关键字：</label>
+    <input type="text" name="keyword" [(ngModel)]='keyword'>
+  </div>
+  <div>
+    <button type="submit">查询</button>
+  </div>
+</form>
+<md-card>
+  <md-table #table [dataSource]="dataSource">
+    <ng-container cdkColumnDef="疾病ID">
+      <md-header-cell *cdkHeaderCellDef> 疾病ID </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.Title}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="疾病名称">
+      <md-header-cell *cdkHeaderCellDef> 疾病名称 </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.Id}} </md-cell>
+    </ng-container>
+
+    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+  <md-paginator #paginator [length]="diseaseDataBase.getData().length" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10, 25]">
+  </md-paginator>
+</md-card>

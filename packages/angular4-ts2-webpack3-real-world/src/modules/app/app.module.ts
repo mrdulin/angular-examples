@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +26,6 @@ import './style.async.css';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule,
 
     AppRoutingModule
   ],

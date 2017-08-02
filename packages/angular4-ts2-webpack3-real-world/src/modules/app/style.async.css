@@ -2,4 +2,6 @@
 @import '~material-design-icons/iconfont/material-icons.css';
 @import './reset.css';
 
-
+body{
+  font-size: 14px;
+}

@@ -354,9 +354,9 @@ legend {
  * 6. Remove default gradient in Android Firefox / FirefoxOS
  */
 
-button,
+/* button,
 input,
-select,
+ select,
 textarea {
   margin: 0;
   font-size: 100%;
@@ -366,7 +366,7 @@ textarea {
   outline-width: 0;
   -webkit-font-smoothing: inherit;
   background-image: none;
-}
+} */
 
 
 /**
@@ -489,16 +489,16 @@ table {
 
 /* =========================================================== */
 
-button,
+/* button,
 input,
-select,
+ select,
 textarea {
   border: none;
   resize: none;
   box-shadow: none;
   background-color: transparent;
   -webkit-appearance: none;
-}
+} */
 
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
