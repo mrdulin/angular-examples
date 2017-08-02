@@ -15,6 +15,22 @@ const routes: Routes = [
       {
         path: 'disease-home',
         component: diseaseHomeComponent
+      },
+      {
+        path: 'specialist-home',
+        component: diseaseHomeComponent
+      },
+      {
+        path: 'hospital-home',
+        component: diseaseHomeComponent
+      },
+      {
+        path: 'doctor-home',
+        component: diseaseHomeComponent
+      },
+      {
+        path: 'serve-city',
+        component: diseaseHomeComponent
       }
     ]
   }
