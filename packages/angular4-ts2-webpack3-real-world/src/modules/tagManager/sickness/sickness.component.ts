@@ -12,6 +12,10 @@ interface IQueryType {
   name: string;
 }
 
+interface ITableHeader extends IQueryType {
+  cell(row: any): string;
+}
+
 @Component({
   selector: 'sickness',
   templateUrl: './sickness.component.html',
@@ -25,17 +29,18 @@ export class SicknessComponent implements OnInit {
   ];
   public diseaseDataBase: DiseaseDataBase;
   public dataSource: DiseaseDataSource | null;
-  public displayedColumns: string[] = [
-    '疾病ID',
-    '疾病名称',
-    // 'ICD标准码',
-    // 'IDC附加码',
-    // '所属疾病类目',
-    // '所属标准科室',
-    // '操作'
+  public tableHeaders: ITableHeader[] = [
+    { key: 'diseaseId', name: '疾病ID', cell: (row: any) => `${row.ID}` },
+    { key: 'diseaseName', name: '疾病名称', cell: (row: any) => `${row.Title}` },
+    { key: 'ICD', name: 'ICD标准码', cell: (row: any) => `${row.SubTitle}` },
+    { key: 'IDC', name: 'IDC附加码', cell: (row: any) => `${row.Image}` },
+    { key: 'diseaseCategory', name: '所属疾病类目', cell: (row: any) => `类目` },
+    { key: 'department', name: '所属标准科室', cell: (row: any) => `科室` },
+    { key: 'operator', name: '操作', cell: (row: any) => `操作` }
   ];
   public selectedQueryType: IQueryType;
   public keyword: string;
+  public displayedColumns: string[] = [];
 
   @ViewChild(MdPaginator)
   public paginator: MdPaginator;
@@ -46,6 +51,7 @@ export class SicknessComponent implements OnInit {
 
   public ngOnInit() {
     this.selectedQueryType = this.queryTypes[0];
+    this.displayedColumns = this.tableHeaders.map((header: ITableHeader) => header.key);
     this.diseaseDataBase = new DiseaseDataBase(this._sicknessService);
     this.dataSource = new DiseaseDataSource(this.diseaseDataBase);
   }

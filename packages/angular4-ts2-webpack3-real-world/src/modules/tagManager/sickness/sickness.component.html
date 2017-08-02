@@ -1,4 +1,4 @@
- <form novalidate (submit)='onSubmit()' class='form'>
+<form novalidate (submit)='onSubmit()' class='form'>
   <div>
     <label for="queryType">查询类别：</label>
     <select class='select' name='queryType' [(ngModel)]='selectedQueryType'>
@@ -17,14 +17,10 @@
 </form>
 <md-card>
   <md-table #table [dataSource]="dataSource">
-    <ng-container cdkColumnDef="疾病ID">
-      <md-header-cell *cdkHeaderCellDef> 疾病ID </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.Title}} </md-cell>
-    </ng-container>
 
-    <ng-container cdkColumnDef="疾病名称">
-      <md-header-cell *cdkHeaderCellDef> 疾病名称 </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.Id}} </md-cell>
+    <ng-container *ngFor='let tableHeader of tableHeaders' [cdkColumnDef]='tableHeader.key'>
+      <md-header-cell *cdkHeaderCellDef> {{tableHeader.name}} </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{tableHeader.cell(row)}} </md-cell>
     </ng-container>
 
     <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
