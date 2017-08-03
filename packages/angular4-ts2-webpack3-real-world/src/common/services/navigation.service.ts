@@ -24,8 +24,9 @@ export class NavigationService {
         { key: 'hospital-home', name: '医院配置', routerLink: ['/disease-center/hospital-home'] },
         { key: 'doctor-home', name: '医生配置', routerLink: ['/disease-center/doctor-home'] },
         { key: 'serve-city', name: '服务城市配置', routerLink: ['/disease-center/serve-city'] }
-      ] 
+      ]
     },
-    { key: 'doctor-center', name: '医生中心', routerLink: ['doctor-center'] }
+    { key: 'doctor-center', name: '医生中心', routerLink: ['doctor-center'] },
+    { key: 'go-to-hospital', name: '去医院配置', routerLink: ['go-to-hospital'] }
   ]
 }

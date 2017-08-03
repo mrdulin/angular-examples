@@ -33,6 +33,10 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: '../doctorCenter/doctorCenter.module.ts#DoctorCenterModule'
+      },
+      {
+        path: '',
+        loadChildren: '../goToHospital/goToHospital.module.ts#GoToHospitalModule'
       }
       // --
     ]
