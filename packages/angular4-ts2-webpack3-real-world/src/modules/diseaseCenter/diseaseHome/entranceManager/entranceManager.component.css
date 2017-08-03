@@ -1,0 +1,55 @@
+.entrance-manager header{
+  margin: 20px 0;
+}
+
+.entrance-manager header .primary{
+  margin-left: 20px;
+}
+
+.entrance-manager .primary, .entrance-manager .warnning{
+  background-color: #108ee9;
+  border-color: #108ee9;
+  color: #fff;
+  
+}
+
+.entrance-manager .warnning{
+  background-color: rgb(240, 65, 52);
+  border-color: rgb(240, 65, 52);
+}
+
+.entrance-manager h1{
+  display: inline-block;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.entrance-manager .container {
+  padding: 0 2%;
+}
+
+.entrance-manager .container .item-card{
+  display: inline-block;
+  width: 29%;
+  margin: 10px 2%;
+  box-sizing: border-box;
+}
+
+.entrance-manager .container .item-card .mat-card-actions{
+  text-align: center;
+}
+
+
+.entrance-manager .container .item-card .inline-item{
+  display: block;
+  width: 100%;
+}
+
+.entrance-manager .container .item-card .inline-item label{
+  vertical-align: middle;
+}
+
+.entrance-manager .container .item-card .inline-item .mat-checkbox{
+  display: inline-block;
+  margin-right: 15px;
+}

@@ -1,0 +1,47 @@
+<section class="entrance-manager">
+  <header>
+    <h1>中心入口配置</h1>
+    <button md-raised-button class="primary">新 增</button>
+  </header>
+
+  <section class="container">
+    <md-card class="item-card" *ngFor="let i of [{},{}, {}, {}]">
+      <md-card-content>
+        <md-input-container class="inline-item">
+          <input mdInput placeholder="排序" value="">
+        </md-input-container>
+
+        <md-input-container class="inline-item">
+          <input mdInput placeholder="名称" value="">
+        </md-input-container>
+
+        <md-input-container class="inline-item">
+          <input mdInput placeholder="URL" value="">
+        </md-input-container>
+
+        <section class="inline-item">
+          <upload></upload>
+        </section>
+
+        <section class="inline-item">
+          <label for="cover">封面：</label>
+          <input id="cover" type="file" name="cover" value="">
+        </section>
+
+        <section class="inline-item">
+          <label>渠道：</label>
+          <md-checkbox value="1">寿险</md-checkbox>
+          <md-checkbox value="2">平安好医生</md-checkbox>
+          <md-checkbox value="3">主客</md-checkbox>
+          <md-checkbox value="4">H</md-checkbox>
+        </section>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button class="primary">编辑</button>
+        <button md-button class="warnning">删除</button>
+      </md-card-actions>
+    </md-card>
+  </section>
+</section>
+
+
