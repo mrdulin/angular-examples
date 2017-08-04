@@ -1,0 +1,10 @@
+<section class="upload">
+  <input #fileIpt type="file" (change)="handleOnChange(fileIpt)" value="">
+  <button md-raised-button (click)="handleClick(fileIpt)">
+    <md-icon>file_upload</md-icon>{{text || 'Upload'}}
+  </button>
+  <section class="upload-img-box" *ngIf="fileIpt.value">
+    <div class="delete-mask"><md-icon (click)="handleDelete(fileIpt)">delete</md-icon></div>
+    <img src="http://static.test.pajkdc.com/v1/tfs//T1bedbBQAg1RCvBVdK_40x40.jpg">
+  </section>
+</section>

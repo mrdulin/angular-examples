@@ -2,18 +2,20 @@ import { NgModule } from '@angular/core';
 
 import { diseaseHomeComponent } from './diseaseHome';
 import { entranceManagerComponent } from './diseaseHome/entranceManager';
-import { uploadComponent } from './diseaseHome/upload';
+import { UploadModule } from '../../common/components/upload';
+import { uploadComponent } from '../../common/components/upload/upload.component';
 
 import { DiseaseCenterRoutingModule } from './diseaseCenter-routing.module';
 import { DiseaseCenterMaterialModule } from './diseaseCenter-material.module';
 
 @NgModule({
   declarations: [
+    uploadComponent,
     diseaseHomeComponent,
-    entranceManagerComponent,
-    uploadComponent
+    entranceManagerComponent
   ],
   imports: [
+    UploadModule,
     DiseaseCenterRoutingModule,
     DiseaseCenterMaterialModule
   ]

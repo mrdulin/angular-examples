@@ -20,12 +20,11 @@
         </md-input-container>
 
         <section class="inline-item">
-          <upload></upload>
+          <upload [text]="'上传图标'" [beforeUpload]="handleIconBeforeUpload"></upload>
         </section>
 
         <section class="inline-item">
-          <label for="cover">封面：</label>
-          <input id="cover" type="file" name="cover" value="">
+          <upload [text]="'上传封面'" [beforeUpload]="handleBannerBeforeUpload"></upload>
         </section>
 
         <section class="inline-item">

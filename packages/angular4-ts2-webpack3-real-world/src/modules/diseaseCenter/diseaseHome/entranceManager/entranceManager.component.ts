@@ -5,4 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './entranceManager.component.html',
   styleUrls: ['./entranceManager.component.css']
 })
-export class entranceManagerComponent{}
+export class entranceManagerComponent{
+  handleIconBeforeUpload(file: any): void {
+    console.log(file.value)
+  }
+
+  handleBannerBeforeUpload(file: any): void {
+    console.log(file.value)
+  }
+}

@@ -1,0 +1,63 @@
+.upload{
+  position: relative;
+  width: 100%;
+  min-width: 120px;
+  margin-bottom: 20px;
+}
+
+.upload input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.upload button.mat-raised-button{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.upload .upload-img-box{
+  position: relative;
+  width: 100%;
+  min-height: 80px;
+  border: 1px dotted #dedede;
+  box-sizing: border-box;
+  margin: 5px 0;
+}
+
+.upload .upload-img-box .delete-mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.3);
+  z-index: 1;
+  opacity: 0;
+}
+
+.upload .upload-img-box .delete-mask:hover{
+  opacity: 1;
+}
+
+.upload .upload-img-box img, .upload .upload-img-box .mat-icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.upload .upload-img-box .mat-icon{
+  opacity: .3;
+  cursor: pointer;
+}
+
+.upload .upload-img-box .mat-icon:hover{
+  opacity: .8;
+}
