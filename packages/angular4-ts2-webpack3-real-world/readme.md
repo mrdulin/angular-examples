@@ -18,10 +18,14 @@ __TODO：__
   https://angular.cn/docs/ts/latest/cookbook/aot-compiler.html
 
 [  ] `sidebar`导航封装成`tree` `component`.
-
-
-__流程：__
+[  ] `http interceptor`，一次请求触发了两次`catch`方法
+[  ] `paginator`组件，动态设置`pageIndex`没有更新视图, 当前是第2页，显示`11-20 of 400`，通过编程方式设置`pageIndex=0`, 依旧显示`11-20 of 400`，
+期望应该显示`1-10 of NaN`。已确定是`angular-material2 beta.8`版本的`bug`.
 
 __废弃:__
 
-[  ] 运行时动态配置路由表, 现在的方案是静态配置，编译时在`angular`内部生成路由映射 [#4234](https://github.com/angular/angular-cli/issues/4234)
+* 运行时动态配置路由表, 现在的方案是静态配置，编译时在`angular`内部生成路由映射 [#4234](https://github.com/angular/angular-cli/issues/4234)
+
+__坑:__
+
+* `MdDialog`注入到`HttpInterceptorService`中，调用`MdDialog`的`open`方法打开全局模态框组件，全局模态框组件的`selector`不能是`dialog`。
