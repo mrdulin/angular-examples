@@ -14,7 +14,7 @@ const plugins = [
   }),
   new webpack.ContextReplacementPlugin(
     /angular(\\|\/)core(\\|\/)@angular/,
-    path.resolve(__dirname, '../src')
+    path.resolve(__dirname, './src')
   ),
   new webpack.DefinePlugin({
     'process.env': {
@@ -83,7 +83,6 @@ const config: webpack.Configuration = {
       {
         test: /\.ts$/,
         exclude: [
-          /node_modules/,
           /\.(spec|e2e)\.ts$/
         ],
         use: [
@@ -103,6 +102,13 @@ const config: webpack.Configuration = {
         test: /\.(html|css)$/,
         use: 'raw-loader',
         exclude: /\.async\.(html|css)$/
+      },
+      {
+        test: /\.async\.(html|css)$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       }
     ]
   },
@@ -120,6 +126,7 @@ const config: webpack.Configuration = {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
       src: path.resolve(__dirname, 'src'),
+      '@angular': path.resolve(__dirname, 'node_modules/@angular'),
       shared: path.resolve(__dirname, 'src/shared')
     }
   },
