@@ -16,7 +16,8 @@ export class DetailComponent implements OnInit, OnDestroy {
   images = {
     collect: `url(${require('../images/collect.png')})`,
     collected: `url(${require('../images/collected.png')})`,
-    iverson: require('../images/Iverson.jpg')
+    iverson: require('../images/Iverson.jpg'),
+    back: `url(${require('../images/back.png')})`
   }
 
   constructor(

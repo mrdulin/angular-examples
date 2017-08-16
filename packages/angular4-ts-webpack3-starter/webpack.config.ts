@@ -2,6 +2,7 @@ import * as webpack from 'webpack';
 import * as path from 'path';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as CopyWebpackPlugin from 'copy-webpack-plugin';
+import * as CompressionPlugin from 'compression-webpack-plugin';
 declare const __dirname: string;
 
 const PORT: number = 2222;
@@ -19,6 +20,14 @@ const plugins = [
     'process.env': {
       NODE_ENV: JSON.stringify(env)
     }
+  }),
+  new CopyWebpackPlugin([
+    { from: './src/contacts.json' }
+  ]),
+  new webpack.optimize.CommonsChunkPlugin({
+    //注意顺序，否则会报错
+    names: ['polyfills', 'vendor'],
+    minChunks: Infinity
   })
 ];
 
@@ -44,14 +53,13 @@ if (env === 'production') {
       },
       comments: false
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'polyfills'],
-      chunks: ['app'],
-      minChunks: module => /node_modules/.test(module.resource)
-    }),
-    new CopyWebpackPlugin([
-      { from: './src/contacts.json' }
-    ])
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.(js|html)$/,
+      threshold: 10240,
+      minRatio: 0.8
+    })
   )
 }
 

@@ -20,6 +20,7 @@
     "paths": {
       //<moduleName> => <baseUrl>/src/shared/<moduleName>
       // shared/contact.service => ./src/shared/contact.service
+      // aot编译也需要
       "shared/*": [
         "src/shared/*"
       ]

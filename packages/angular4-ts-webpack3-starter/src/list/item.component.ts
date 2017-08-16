@@ -5,8 +5,6 @@ import { Router } from '@angular/router';
 // 因此依旧会报404。
 // import * as iversonImagePath from '../images/Iverson.jpg';
 
-const iversonImagePath = require('../images/Iverson.jpg');
-
 @Component({
   selector: 'list-item',
   templateUrl: './item.component.html',
@@ -16,7 +14,10 @@ export class ListItemComponent implements OnInit {
   @Input() contact: any = {};
   @Output() routerNavigate = new EventEmitter<number>();
 
-  iversonImagePath: string = iversonImagePath;
+  images = {
+    iverson: require('../images/Iverson.jpg'),
+    tel: `url(${require('../images/tel.png')})`
+  }
 
   constructor() { }
   ngOnInit() {

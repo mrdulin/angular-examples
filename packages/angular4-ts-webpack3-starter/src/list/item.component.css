@@ -36,7 +36,8 @@ img.icon-head{
   right: 8px;
   width: 20px;
   height: 20px;
-  background: url("./images/tel.png") no-repeat;
+  /* background: url("./images/tel.png") no-repeat; */
+  background-repeat: no-repeat;
   background-size: cover;
   transform: translateY(-50%);
 }Ï

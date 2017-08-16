@@ -1,0 +1,15 @@
+4.0K	dist/contacts.json
+ 16K	dist/images/Iverson.599c733dcdf601a1.jpg
+ 16K	dist/images
+4.0K	dist/index.html
+ 68K	dist/scripts/app.595029826f6da169.js
+ 16K	dist/scripts/app.595029826f6da169.js.gz
+284K	dist/scripts/app.595029826f6da169.js.map
+132K	dist/scripts/polyfills.64b33263ba4145cb.js
+ 44K	dist/scripts/polyfills.64b33263ba4145cb.js.gz
+1.0M	dist/scripts/polyfills.64b33263ba4145cb.js.map
+568K	dist/scripts/vendor.c55fa4dc0cc91f38.js
+124K	dist/scripts/vendor.c55fa4dc0cc91f38.js.gz
+4.8M	dist/scripts/vendor.c55fa4dc0cc91f38.js.map
+7.1M	dist/scripts
+7.1M	dist

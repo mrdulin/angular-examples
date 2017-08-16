@@ -24,7 +24,8 @@
     left: 10px;
     width: 25px;
     height: 25px;
-    background: url("./images/back.png") no-repeat;
+    /* background: url("./images/back.png") no-repeat; */
+    background-repeat: no-repeat;
     background-size: cover;
     transform: translateY(-50%);
 }
