@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "es2015",
+    "moduleResolution": "node",
     "lib": [
       "dom",
       "es2015",
@@ -15,9 +16,10 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
 
-    "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
+      //<moduleName> => <baseUrl>/src/shared/<moduleName>
+      // shared/contact.service => ./src/shared/contact.service
       "shared/*": [
         "src/shared/*"
       ]
@@ -26,10 +28,16 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": [
-    "src/**/*"
+  "files": [
+    "./src/main.ts",
+    "./src/app.module.ts",
+    "./src/typings.d.ts"
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "genDir": "./compiled/aot",
+    "skipMetadataEmit": true
+  }
 }

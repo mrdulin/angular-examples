@@ -6,10 +6,12 @@
     </a>
     <a class="edit" (click)="editContact()">编辑</a>
     <div class='name-and-icon'>
-      <img src="./images/Iverson.jpg" alt="avatar">
+      <img [src]='images.iverson' alt="avatar">
       <span class="contact-name">
         {{detail.name}}
-        <i [ngClass]="{collect: detail.collection === 0, collected: detail.collection === 1}" (click)='collectTheContact()'></i>
+        <i [style.background-image]="detail.collection === 0 ? images.collect : images.collected"
+          (click)='collectTheContact()'>
+        </i>
       </span>
     </div>
   </div>

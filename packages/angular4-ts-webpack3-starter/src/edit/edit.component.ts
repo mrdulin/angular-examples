@@ -7,8 +7,8 @@ import { UtilService } from 'shared/util.service';
 
 @Component({
   selector: 'my-operate',
-  templateUrl: './edit/edit.component.html',
-  styleUrls: ['./edit/edit.component.css']
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit, OnDestroy {
   contacts: any[] = [];

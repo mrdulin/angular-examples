@@ -3,11 +3,11 @@ import { Location } from '@angular/common';
 
 @Component({
   selector: 'my-footer',
-  templateUrl: './shared/footer.component.html',
-  styleUrls: ['./shared/footer.component.css']
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-  private isListPage: boolean = true;
+  isListPage: boolean = true;
 
   constructor(
     private _location: Location

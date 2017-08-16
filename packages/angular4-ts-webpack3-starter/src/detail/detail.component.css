@@ -57,15 +57,17 @@
   right: 45px;
   width: 30px;
   height: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.header-detail .name-and-icon .contact-name i.collect{
-    background: url("./images/collect.png") no-repeat;
+/* .header-detail .name-and-icon .contact-name i.collect{
+     background: url("./images/collect.png") no-repeat;
     background-size: cover;
 }
 .header-detail .name-and-icon .contact-name i.collected{
-  background: url("./images/collected.png") no-repeat;
+   background: url("./images/collected.png") no-repeat;
   background-size: cover;
-}
+} */
 .detail-info{
     padding: 15px 15px 0;
 }

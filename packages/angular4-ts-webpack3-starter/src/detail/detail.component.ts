@@ -5,13 +5,19 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'detail',
-  templateUrl: './detail/detail.component.html',
-  styleUrls: ['./detail/detail.component.css']
+  templateUrl: './detail.component.html',
+  styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit, OnDestroy {
   private sub: Subscription;
   contact_id: number;
   detail: any = {};
+
+  images = {
+    collect: `url(${require('../images/collect.png')})`,
+    collected: `url(${require('../images/collected.png')})`,
+    iverson: require('../images/Iverson.jpg')
+  }
 
   constructor(
     private _contactService: ContactService,

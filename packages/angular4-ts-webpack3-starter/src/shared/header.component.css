@@ -14,6 +14,7 @@ h3 i{
   width: 25px;
   height: 25px;
   transform: translateY(-50%);
-  background: url("./images/add.png") no-repeat;
+  /* background: url("./images/add.png") no-repeat; */
+  background-repeat: no-repeat;
   background-size: cover;
-}Ï
+}

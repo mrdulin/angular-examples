@@ -4,8 +4,8 @@ import { ContactService } from 'shared/contact.service';
 
 @Component({
   selector: 'list',
-  templateUrl: './list/list.component.html',
-  styleUrls: ['./list/list.component.css']
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
   contacts: any[] = [];

@@ -27,7 +27,7 @@ import { ContactService, HeaderComponent, FooterComponent, PhonePipe, UtilServic
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(rootRouterConfig)
+    RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   bootstrap: [AppComponent],
   providers: [ContactService, UtilService]
