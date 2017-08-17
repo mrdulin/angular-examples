@@ -32,6 +32,8 @@
   "files": [
     "./src/main.ts",
     "./src/app.module.ts",
+    "./src/+detail/index.ts",
+    "./src/+list/index.ts",
     "./src/typings.d.ts"
   ],
   "angularCompilerOptions": {
