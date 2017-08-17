@@ -254,6 +254,12 @@ alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/alphanum-sort/download/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
 
+angular-router-loader@^0.6.0:
+  version "0.6.0"
+  resolved "http://registry.npm.taobao.org/angular-router-loader/download/angular-router-loader-0.6.0.tgz#6c7caf7f1ea6acc6e2bc682cef91a343e9a7f3b5"
+  dependencies:
+    loader-utils "^1.0.2"
+
 angular2-template-loader@^0.6.2:
   version "0.6.2"
   resolved "http://registry.npm.taobao.org/angular2-template-loader/download/angular2-template-loader-0.6.2.tgz#c0d44e90fff0fac95e8b23f043acda7fd1c51d7c"

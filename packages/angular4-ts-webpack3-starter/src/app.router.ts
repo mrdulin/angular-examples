@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 
 import { ListComponent } from './list';
-import { DetailComponent } from './detail';
 import { CollectionComponent } from './collection';
 import { EditComponent } from './edit';
 
@@ -16,8 +15,8 @@ export const rootRouterConfig: Routes = [
     component: ListComponent
   },
   {
-    path: 'list/:id',
-    component: DetailComponent
+    path: '',
+    loadChildren: './detail/detail.module#DetailModule?chunkName=DetailModule'
   },
   {
     path: 'collection',

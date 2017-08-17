@@ -7,6 +7,7 @@ declare const __dirname: string;
 
 const PORT: number = 2222;
 const env: string = process.env.NODE_ENV === 'production' ? 'production' : 'development';
+const PROD: boolean = env === 'production';
 
 const plugins = [
   new HtmlWebpackPlugin({
@@ -65,15 +66,16 @@ if (env === 'production') {
 
 const config: webpack.Configuration = {
   entry: {
-    app: path.resolve(__dirname, env === 'production' ? 'src/main-aot.ts' : 'src/main.ts'),
+    app: path.resolve(__dirname, PROD ? 'src/main-aot.ts' : 'src/main.ts'),
     vendor: path.resolve(__dirname, 'src/vendor.ts'),
     polyfills: path.resolve(__dirname, 'src/polyfills.ts')
   },
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: env === 'production' ? 'scripts/[name].[chunkhash:16].js' : '[name].bundle.js',
-    pathinfo: env === 'development'
+    filename: PROD ? 'scripts/[name].[chunkhash:16].js' : '[name].bundle.js',
+    chunkFilename: PROD ? 'scripts/[id].[name].[chunkhash:16].js' : '[id].[name].js',
+    pathinfo: !PROD
   },
 
   devtool: "source-map",
@@ -87,6 +89,14 @@ const config: webpack.Configuration = {
         ],
         use: [
           'ts-loader',
+          {
+            loader: 'angular-router-loader',
+            options: {
+              aot: PROD,
+              debug: PROD,
+              genDir: './compiled/aot'
+            }
+          },
           'angular2-template-loader'
         ]
       },

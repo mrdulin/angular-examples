@@ -1,5 +1,5 @@
-import { platformBrowser } from '@angular/platform-browser';
 import { enableProdMode } from '@angular/core';
+import { platformBrowser } from '@angular/platform-browser';
 import { AppModuleNgFactory } from '../compiled/aot/src/app.module.ngfactory';
 
 if (process.env.NODE_ENV === 'production') {

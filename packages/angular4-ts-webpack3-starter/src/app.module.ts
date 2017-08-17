@@ -13,7 +13,7 @@ import { DetailComponent } from './detail';
 import { CollectionComponent } from './collection';
 import { EditComponent } from './edit';
 
-import { ContactService, HeaderComponent, FooterComponent, PhonePipe, UtilService } from './shared';
+import { ContactService, HeaderComponent, FooterComponent, PipeModule, UtilService } from './shared';
 
 import './style.async.css';
 
@@ -22,10 +22,8 @@ import './style.async.css';
     AppComponent,
     HeaderComponent, FooterComponent,
     ListComponent, ListItemComponent,
-    DetailComponent,
     CollectionComponent,
     EditComponent,
-    PhonePipe
   ],
   imports: [
     BrowserAnimationsModule,
@@ -33,10 +31,14 @@ import './style.async.css';
     FormsModule,
     HttpModule,
     AppMaterialModule,
+    PipeModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   bootstrap: [AppComponent],
-  providers: [ContactService, UtilService]
+  providers: [
+    ContactService,
+    UtilService
+  ]
 })
 export class AppModule {
 

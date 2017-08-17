@@ -34,9 +34,6 @@
     "./src/app.module.ts",
     "./src/typings.d.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ],
   "angularCompilerOptions": {
     "genDir": "./compiled/aot",
     "skipMetadataEmit": true

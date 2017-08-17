@@ -10,7 +10,7 @@
     "build:dev": "rm -rf dist && webpack --profile --progress",
     "build": "rm -rf dist && NODE_ENV=production webpack --profile --progress && npm run http-server",
     "build:aot": "rm -rf compiled && ngc -p tsconfig-aot.json",
-    "http-server": "http-server ./dist -p 2222 -a 0.0.0.0 -g -o"
+    "http-server": "http-server ./dist -p 2222 -a 0.0.0.0 -g -o -c10"
   },
   "devDependencies": {
     "@types/compression-webpack-plugin": "^0.3.1",
@@ -19,6 +19,7 @@
     "@types/html-webpack-plugin": "^2.28.0",
     "@types/webpack": "^3.0.9",
     "@types/webpack-dev-server": "^2.4.1",
+    "angular-router-loader": "^0.6.0",
     "angular2-template-loader": "^0.6.2",
     "compression-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.0.1",
