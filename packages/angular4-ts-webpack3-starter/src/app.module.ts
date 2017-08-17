@@ -8,21 +8,18 @@ import { RouterModule } from '@angular/router';
 import { AppMaterialModule } from './app-material.module';
 import { rootRouterConfig } from './app.router';
 import { AppComponent } from './app.component';
-import { ListComponent, ListItemComponent } from './list';
 import { CollectionComponent } from './collection';
 import { EditComponent } from './edit';
 
-import { ContactService, HeaderComponent, FooterComponent, PipeModule, UtilService } from './shared';
+import { ContactService, ComponentModule, PipeModule, UtilService } from './shared';
 
 import './style.async.css';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent, FooterComponent,
-    ListComponent, ListItemComponent,
     CollectionComponent,
-    EditComponent,
+    EditComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -30,6 +27,7 @@ import './style.async.css';
     FormsModule,
     HttpModule,
     AppMaterialModule,
+    ComponentModule,
     PipeModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],

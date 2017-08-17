@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 
-import { ListComponent } from './list';
 import { CollectionComponent } from './collection';
 import { EditComponent } from './edit';
+import { loadListModule } from './list';
 
 export const rootRouterConfig: Routes = [
   {
@@ -11,8 +11,8 @@ export const rootRouterConfig: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'list',
-    component: ListComponent
+    path: '',
+    loadChildren: loadListModule
   },
   {
     path: '',
