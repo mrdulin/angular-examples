@@ -16,7 +16,7 @@ export const rootRouterConfig: Routes = [
   },
   {
     path: '',
-    loadChildren: './detail/detail.module#DetailModule?chunkName=DetailModule'
+    loadChildren: './+detail/detail.module#DetailModule?chunkName=DetailModule'
   },
   {
     path: 'collection',

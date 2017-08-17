@@ -9,7 +9,6 @@ import { AppMaterialModule } from './app-material.module';
 import { rootRouterConfig } from './app.router';
 import { AppComponent } from './app.component';
 import { ListComponent, ListItemComponent } from './list';
-import { DetailComponent } from './detail';
 import { CollectionComponent } from './collection';
 import { EditComponent } from './edit';
 
