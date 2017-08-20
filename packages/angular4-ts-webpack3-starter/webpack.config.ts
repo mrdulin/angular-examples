@@ -65,7 +65,8 @@ if (env === 'production') {
     }),
     new AppCachePlugin({
       cache: [],
-      network: ['contact.json'],
+      network: ['*'],
+      //TODO: fallback无效
       fallback: ['offline.html'],
       exclude: [
         'contact.json',
