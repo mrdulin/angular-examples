@@ -9,9 +9,9 @@
     ],
     "sourceMap": true,
     "outDir": "./compiled/src",
+
     "noImplicitAny": true,
     "noImplicitThis": true,
-
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
 

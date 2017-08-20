@@ -3,6 +3,7 @@ import * as path from 'path';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as CopyWebpackPlugin from 'copy-webpack-plugin';
 import * as CompressionPlugin from 'compression-webpack-plugin';
+const AppCachePlugin = require('appcache-webpack-plugin');
 declare const __dirname: string;
 
 const PORT: number = 2222;
@@ -23,7 +24,8 @@ const plugins = [
     }
   }),
   new CopyWebpackPlugin([
-    { from: './src/contacts.json' }
+    { from: './src/contacts.json' },
+    { from: './src/offline.html' }
   ]),
   new webpack.optimize.CommonsChunkPlugin({
     //注意顺序，否则会报错
@@ -60,6 +62,16 @@ if (env === 'production') {
       test: /\.(js|html)$/,
       threshold: 10240,
       minRatio: 0.8
+    }),
+    new AppCachePlugin({
+      cache: [],
+      network: ['contact.json'],
+      fallback: ['offline.html'],
+      exclude: [
+        'contact.json',
+        'offline.html'
+      ],
+      output: 'angular4-ts-webpack2.manifest.appcache'
     })
   )
 }
@@ -127,7 +139,7 @@ const config: webpack.Configuration = {
     contentBase: path.resolve(__dirname, 'src'),
     port: PORT,
     host: '0.0.0.0',
-    historyApiFallback: true,
+    historyApiFallback: false,
     noInfo: false,
     stats: 'minimal'
   },

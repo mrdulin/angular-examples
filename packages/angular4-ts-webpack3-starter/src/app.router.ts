@@ -18,7 +18,12 @@ export const rootRouterConfig: Routes = [
     // 报错：https://stackoverflow.com/questions/45713345/angular2-runtime-compiler-is-not-loaded
     // https://github.com/brandonroberts/angular-router-loader/issues/85
     // loadChildren: loadListModule
-    loadChildren: './+list/list.module#ListModule?chunkName=ListModule'
+
+    // 同步加载解决方案：
+    loadChildren: './+list/list.module#ListModule?chunkName=ListModule&sync=true'
+
+    // 惰性加载
+    // loadChildren: './+list/list.module#ListModule?chunkName=ListModule'
   },
   {
     path: '',
