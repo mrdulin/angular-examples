@@ -1,0 +1,3 @@
+<ng-template ngFor let-item [ngForOf]='items'>
+  <ng-container *ngTemplateOutlet='tmpl; context: {item: item}'></ng-container>
+</ng-template>

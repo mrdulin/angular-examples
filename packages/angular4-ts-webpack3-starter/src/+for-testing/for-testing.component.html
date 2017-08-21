@@ -28,4 +28,34 @@
   <hr>
   <ngFor-radios></ngFor-radios>
 
+  <hr>
+  <form novalidate>
+    <label *ngFor='let color of colors;'>
+      {{color}}
+      <input type="radio" name='color' [value]='color' (click)='colorSelected = color'/>
+    </label>
+    <button type="reset" (click)='colorSelected = "";'>重置</button>
+  </form>
+  <div [bgColor]='colorSelected'>属性型指令测试</div>
+
+  <hr>
+  <p>结构型指令测试</p>
+  <button type='button' (click)='condition = !condition'>toggle</button>
+  <div *unless='condition'>我是内容</div>
+  <ng-template [unless]='condition'>我也是内容</ng-template>
+
+  <hr>
+  <p>ngTemplateOutlet指令测试</p>
+  <ngTemplateOutlet-testing>
+    <ng-template let-item='item'>
+      <span>{{item | json}}</span>
+    </ng-template>
+  </ngTemplateOutlet-testing>
+
+  <hr>
+  <p>@ContentChild测试</p>
+  <my-parent>
+    <my-child></my-child>
+    <my-child></my-child>
+  </my-parent>
 </section>

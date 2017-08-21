@@ -13,6 +13,13 @@ export class ForTestingComponent implements OnInit{
   number1: number = 0;
   number2: number = 1;
 
+  //属性型指令测试
+  colorSelected: string;
+  colors: string[] = ['lightgreen', 'red'];
+
+  //结构性指令测试
+  condition: boolean = false;
+
   ngOnInit() {
     setTimeout(() => {
       this.a = {

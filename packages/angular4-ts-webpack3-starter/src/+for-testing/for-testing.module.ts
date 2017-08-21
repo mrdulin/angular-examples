@@ -6,12 +6,20 @@ import { FormsModule } from '@angular/forms';
 import { ForTestingComponent } from './for-testing.component';
 import { AmountComponent } from './amount';
 import { NgForRadiosComponent } from './ngFor-radios';
+import { BgColorDirective } from './bg-color';
+import { UnlessDirective } from './unless';
+import { NgTemplateOutletTestingComponent } from './ngTemplateOutlet-testing';
+import { MyChildComponent, MyParentComponent } from './@ViewChild-and-@ContentChild-example';
 
 @NgModule({
   declarations: [
     ForTestingComponent,
     AmountComponent,
-    NgForRadiosComponent
+    NgForRadiosComponent,
+    NgTemplateOutletTestingComponent,
+    MyChildComponent, MyParentComponent,
+    BgColorDirective,
+    UnlessDirective
   ],
   imports: [
     CommonModule,
