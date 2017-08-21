@@ -30,6 +30,10 @@ export const rootRouterConfig: Routes = [
     loadChildren: './+detail/detail.module#DetailModule?chunkName=DetailModule'
   },
   {
+    path: '',
+    loadChildren: './+for-testing/for-testing.module#ForTestingModule?chunkName=ForTestingModule'
+  },
+  {
     path: 'collection',
     component: CollectionComponent
   },

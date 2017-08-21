@@ -1,0 +1,21 @@
+<section>
+  <!-- 方式一 -->
+  <!-- radio默认值通过给radioOptSelected赋值的形式设定 -->
+  <form novalidate (ngSubmit)='onForm1Submit()'>
+    <div *ngFor='let opt of radioOpts; '>
+      <label for="radio_{{opt.key}}">{{opt.name}}</label>
+      <input type="radio" [value]='opt' name='city' [(ngModel)]='radioOptSelected' />
+    </div>
+    <button type="submit">提交</button>
+  </form>
+
+  <!-- 方式二 -->
+  <!-- radio的默认值可以通过index和input的checked属性进行设定 -->
+  <form novalidate (ngSubmit)='onForm2Submit()'>
+    <div *ngFor='let opt of radioOpts; let idx = index'>
+      <label for="radio_{{opt.key}}">{{opt.name}}</label>
+      <input type="radio" [value]='opt' name='city' (change)='onRadioSelect(opt)' [checked]='idx === 0'/>
+    </div>
+    <button type="submit">提交</button>
+  </form>
+</section>

@@ -1,0 +1,31 @@
+<section>
+  <div>
+    <p>安全导航操作符:</p>
+    <p>{{a.b?.c?.d}}</p>
+  </div>
+
+  <hr>
+
+  <div>
+    <p>双向绑定原理:</p>
+
+    <div>
+      <span>Number 1: </span>
+      <amount [(value)]="number1"></amount>
+    </div>
+
+    <div>
+      <span>Number 2: </span>
+      <amount [value]="number2" (valueChange)="onValueChange($event)"></amount>
+    </div>
+
+    <ul>
+      <li>Number1: 父组件当前值: {{number1}}</li>
+      <li>Number2: 父组件当前值: {{number2}}</li>
+    </ul>
+  </div>
+
+  <hr>
+  <ngFor-radios></ngFor-radios>
+
+</section>
