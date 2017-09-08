@@ -1,4 +1,4 @@
-* angular4-ts-webpack2
+* angular4-ts-webpack3
 
 __功能特性:__
 
@@ -15,3 +15,20 @@ __问题总结：__
 注意`alias`中的路径，`path.resolve(__dirname, '/src/shared')`是会报错的，应该是`path.resolve(__dirname, 'src/shared')`
 
 * `aot`编译成功后，使用`webpack`打包报错, 问题解决: https://github.com/angular/material2/issues/6490.
+
+Finally, I found the problem. My aot directory is `compiled/aot/node_modules`, And this point is my `ts-loader`
+
+```
+{
+  test: /\.ts$/,
+  exclude: [
+      /node_modules/,   //<- Here is the problem.
+    /\.(spec|e2e)\.ts$/
+  ],
+  use: [
+    'ts-loader',
+    'angular2-template-loader'
+  ]
+},
+```
+Just remove it, everything is fine.
