@@ -6,7 +6,7 @@ import {
 } from '@angular/core/testing';
 import { ExampleComponent } from './example.component';
 
-fdescribe('65197197', () => {
+describe('65197197', () => {
   let component: ExampleComponent;
   let fixture: ComponentFixture<ExampleComponent>;
   beforeEach(() => {
