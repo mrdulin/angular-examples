@@ -20,6 +20,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "graphql-tag",
+              "zen-observable"
+            ],
             "outputPath": "dist/angular-v11-codelab",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -28,10 +32,12 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/snow_public/snow_assets/images"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/snow_public/snow_styles.scss"
             ],
             "scripts": []
           },

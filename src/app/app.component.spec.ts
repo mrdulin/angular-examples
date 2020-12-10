@@ -5,12 +5,8 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [RouterTestingModule],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 
@@ -26,10 +22,13 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('angular-v11-codelab');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('angular-v11-codelab app is running!');
+  it('unit test', () => {
+    const getElementById = document.getElementById;
+    document.getElementById = jasmine
+      .createSpy()
+      .and.returnValue(document.createElement('div'));
+    console.log(document.getElementById);
+    document.getElementById = getElementById;
+    console.log(document.getElementById);
   });
 });
