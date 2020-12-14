@@ -3,7 +3,7 @@ import { of } from 'rxjs';
 import { AuthService } from './auth.service';
 import { AuthorizeComponent } from './authorize.component';
 
-fdescribe('65074282', () => {
+describe('65074282', () => {
   let component: AuthorizeComponent;
   let fixture: ComponentFixture<AuthorizeComponent>;
   let getUserDetailsSpy;
