@@ -1,6 +1,6 @@
 import { ExampleComponent } from './example.component';
 
-fdescribe('64929369', () => {
+describe('64929369', () => {
   it('should call setData from RPage', () => {
     const component = new ExampleComponent();
     //@ts-ignore
