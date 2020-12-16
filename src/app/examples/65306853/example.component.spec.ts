@@ -3,7 +3,7 @@ import { of } from 'rxjs';
 import { ApiService } from './api.service';
 import { ExampleComponent } from './example.component';
 
-fdescribe('#deleteVehicle', () => {
+describe('#deleteVehicle', () => {
   let apiServiceSpy: jasmine.SpyObj<ApiService>;
   let fixture: ComponentFixture<ExampleComponent>;
   let component: ExampleComponent;
