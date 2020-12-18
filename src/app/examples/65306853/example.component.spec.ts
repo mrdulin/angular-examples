@@ -4,26 +4,32 @@ import { ApiService } from './api.service';
 import { ExampleComponent } from './example.component';
 
 describe('#deleteVehicle', () => {
-  let apiServiceSpy: jasmine.SpyObj<ApiService>;
+  let apiService: ApiService;
   let fixture: ComponentFixture<ExampleComponent>;
   let component: ExampleComponent;
 
   beforeEach(() => {
-    apiServiceSpy = jasmine.createSpyObj('ApiService', ['deleteVehicle']);
-    apiServiceSpy.deleteVehicle.and.returnValue(
-      of('deleteVehicle fake implementation')
-    );
+    // apiServiceSpy = jasmine.createSpyObj('ApiService', ['deleteVehicle']);
+    // apiServiceSpy.deleteVehicle.and.returnValue(
+    //   of('deleteVehicle fake implementation')
+    // );
 
     TestBed.configureTestingModule({
       declarations: [ExampleComponent],
-      providers: [{ provide: ApiService, useValue: apiServiceSpy }],
+      providers: [ApiService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ExampleComponent);
+    apiService = TestBed.get(ApiService);
     component = fixture.componentInstance;
+    fixture.detectChanges();
   });
   it('should navigate to list vehicle component', () => {
     const confirmSpy = spyOn(window, 'confirm').and.returnValue(true);
+    const deleteVehicleSpy = spyOn(apiService, 'deleteVehicle')
+      .withArgs(component.selectedVehicle.id)
+      .and.callThrough();
+
     let navigateSpy = spyOn(
       component,
       'navigateToListVehicleComponent'
@@ -34,7 +40,7 @@ describe('#deleteVehicle', () => {
     expect(confirmSpy).toHaveBeenCalledOnceWith(
       'Bent u zeker dat u deze wagen wilt verwijderen?'
     );
-    expect(apiServiceSpy.deleteVehicle).toHaveBeenCalledOnceWith(1);
+    expect(deleteVehicleSpy).toHaveBeenCalledOnceWith(1);
     expect(navigateSpy).toHaveBeenCalled();
   });
 });
