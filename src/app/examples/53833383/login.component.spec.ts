@@ -8,7 +8,7 @@ import {
 import { AuthService } from './auth.service';
 import { LoginComponent } from './login.component';
 
-fdescribe('53833383', () => {
+describe('53833383', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   let service: AuthService;
