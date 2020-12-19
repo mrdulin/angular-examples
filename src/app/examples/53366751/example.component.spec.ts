@@ -8,7 +8,7 @@ class NotificationStub {
   }
 }
 
-fdescribe('53366751', () => {
+describe('53366751', () => {
   let fixture: ComponentFixture<ExampleComponent>;
   let component: ExampleComponent;
   beforeEach(
