@@ -1,9 +1,22 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class ApiService {
-  deleteVehicle(id) {
-    return of('deleteVehicle real implementation');
+  BASE_API_URL = 'http://localhost';
+  constructor(private http: HttpClient) {}
+
+  private deleteFromAPI(url): any {
+    return this.http
+      .delete(this.BASE_API_URL + url)
+      .pipe(catchError(this.handleError));
+  }
+  private handleError(err) {
+    return of(err);
+  }
+  deleteVehicle(id: number): any {
+    return this.deleteFromAPI('vehicle/' + id);
   }
 }

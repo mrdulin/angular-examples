@@ -1,4 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { ApiService } from './api.service';
 import { ExampleComponent } from './example.component';
@@ -8,32 +9,32 @@ describe('#deleteVehicle', () => {
   let fixture: ComponentFixture<ExampleComponent>;
   let component: ExampleComponent;
 
-  beforeEach(() => {
-    // apiServiceSpy = jasmine.createSpyObj('ApiService', ['deleteVehicle']);
-    // apiServiceSpy.deleteVehicle.and.returnValue(
-    //   of('deleteVehicle fake implementation')
-    // );
-
-    TestBed.configureTestingModule({
-      declarations: [ExampleComponent],
-      providers: [ApiService],
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(ExampleComponent);
-    apiService = TestBed.get(ApiService);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [ExampleComponent],
+        imports: [HttpClientModule],
+        providers: [ApiService, HttpClient],
+      })
+        .compileComponents()
+        .then(() => {
+          fixture = TestBed.createComponent(ExampleComponent);
+          apiService = TestBed.get(ApiService);
+          component = fixture.componentInstance;
+          fixture.detectChanges();
+        });
+    })
+  );
   it('should navigate to list vehicle component', () => {
     const confirmSpy = spyOn(window, 'confirm').and.returnValue(true);
     const deleteVehicleSpy = spyOn(apiService, 'deleteVehicle')
       .withArgs(component.selectedVehicle.id)
-      .and.callThrough();
+      .and.returnValue(of('deleteVehicle fake implementation'));
 
     let navigateSpy = spyOn(
       component,
       'navigateToListVehicleComponent'
-    ).and.callThrough();
+    ).and.stub();
 
     component.deleteVehicle();
 
