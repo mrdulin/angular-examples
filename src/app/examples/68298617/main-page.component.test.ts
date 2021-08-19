@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { EmitterService } from './emitter.service';
 import { MainPageComponent } from './main-page.component';
 
-fdescribe('MainpageComponent', () => {
+describe('MainpageComponent', () => {
   let component: MainPageComponent;
   let fixture: ComponentFixture<MainPageComponent>;
   beforeEach(() => {
